@@ -5,10 +5,28 @@
  */
 package com.campocolombia.modelo.gestionabejas;
 
+import com.campocolombia.modelo.Conexcion;
+import com.mysql.jdbc.Connection;
+import java.sql.PreparedStatement;
+
 /**
  *
  * @author Jonattan
  */
-public class ConsultaColmena {
+public class ConsultaColmena extends Conexcion{
     
+    public boolean registrar(Colmena Col) {
+        
+        PreparedStatement ps = null;
+        Connection con =  getConexion();        
+        String SQL = "call registrarColmena(?,?,?,?)";
+        
+        try {
+            ps = con.prepareStatement(SQL);
+            //ps.setString(1, Col.getAbejas_IdAbejas());
+        } catch (Exception e) {
+        }
+        return false;
+    
+    }
 }

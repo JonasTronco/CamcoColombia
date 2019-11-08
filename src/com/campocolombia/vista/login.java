@@ -37,6 +37,7 @@ public class login extends javax.swing.JFrame {
         labOlvidoPassword = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        selectRol = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,6 +64,9 @@ public class login extends javax.swing.JFrame {
         labOlvidoPassword.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
         labOlvidoPassword.setText("¿Has Olvidado tu contraseña? ");
 
+        selectRol.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        selectRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apicultor", "Gerente", "Investigador" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -82,7 +86,10 @@ public class login extends javax.swing.JFrame {
                         .addGap(135, 135, 135)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labOlvidoPassword)
-                            .addComponent(botonIngresar))))
+                            .addComponent(botonIngresar)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(selectRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -100,11 +107,13 @@ public class login extends javax.swing.JFrame {
                 .addComponent(textUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
+                .addGap(41, 41, 41)
+                .addComponent(selectRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(botonIngresar)
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labOlvidoPassword)
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addGap(64, 64, 64))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 470, 710));
@@ -153,7 +162,7 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonIngresar;
+    public javax.swing.JButton botonIngresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -161,7 +170,8 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel labOlvidoPassword;
     private javax.swing.JLabel labPassword;
-    private javax.swing.JTextField textUserName;
-    private javax.swing.JPasswordField textUserPassword;
+    public javax.swing.JComboBox<String> selectRol;
+    public javax.swing.JTextField textUserName;
+    public javax.swing.JPasswordField textUserPassword;
     // End of variables declaration//GEN-END:variables
 }
