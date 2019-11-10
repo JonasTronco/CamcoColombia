@@ -6,6 +6,7 @@
 package com.campocolombia.modelo.user;
 
 import com.campocolombia.modelo.Conexcion;
+import com.mysql.jdbc.CallableStatement;
 import com.mysql.jdbc.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,24 +19,32 @@ public class consultaUser extends Conexcion {
 
     public boolean consultaUser(User User) {
 
-        PreparedStatement ps = null;
-        Connection con = getConexion();
-        ResultSet ResultadoProcedure = null;
-        
-        String SQL = "call consultarEmpleado(?,?)"; // Se requiere una consulta a tabla empleado 
-        
-         try {
-             
-            ps = con.prepareStatement(SQL);
-            ps.setString(1, User.getNick());
-            ps.setString(2, User.getPassword());
-            ResultadoProcedure = ps.executeQuery();
+        try {
+            System.out.println(User.getRol());
             
-             
+            Connection con = getConexion();
+            CallableStatement Sentencia = (CallableStatement) con.prepareCall("{call consultaUser(?,?,?)}");
             
+            
+            
+            
+            Sentencia.setString(1, User.getNick());
+            Sentencia.setString(2, User.getRol());
+            Sentencia.setString(3, User.getPassword());
+
+            ResultSet result = Sentencia.executeQuery();
+
+            if (result.next()) {
+                return result.getBoolean(1);
+            } else {
+                return false;
+
+            }
+
         } catch (Exception e) {
+            System.err.println(e + " consulta");
+            return false;
         }
-        return false;
 
     }
 

@@ -1,9 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.campocolombia;
+
+import com.campocolombia.controlador.controladorLogin;
+import com.campocolombia.modelo.user.User;
+import com.campocolombia.modelo.user.consultaUser;
+import com.campocolombia.vista.login;
+import com.campocolombia.vista.principal;
 
 /**
  *
@@ -11,11 +12,15 @@ package com.campocolombia;
  */
 public class CampoColombia {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        User uSer = new User();
+        consultaUser cUser = new consultaUser();
+        login frmLogin = new login();
+        principal frmPrincipal = new principal();
+        
+        controladorLogin ctrlLogin = new controladorLogin(uSer, cUser, frmLogin,frmPrincipal);
+        frmLogin.setVisible(true);
     }
-    
+
 }
