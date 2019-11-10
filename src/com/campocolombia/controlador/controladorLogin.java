@@ -38,7 +38,11 @@ public  class controladorLogin implements ActionListener{
         if (e.getSource() == frmLogin.botonIngresar) {
             User.setNick(frmLogin.textUserName.getText());
             User.setPassword(frmLogin.textUserPassword.getText());
-            User.setRol(frmLogin.selectRol.getItemAt(0));
+            User.setRol(frmLogin.selectRol.getSelectedItem().toString());
+            
+            
+            
+            
             try {
                 
                 if (consultaUser.consultaUser(User)) {

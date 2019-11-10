@@ -21,9 +21,9 @@ public class Conexcion {
     private final String nombreBaseDatos = "CampoColombia";
     private String userLogin;
     private String password;
-    private final String URL = "jdbc:mysql://localhost:3306/" + nombreBaseDatos;    
+    private final String URL = "jdbc:mysql://localhost:3306/" + nombreBaseDatos ;    
     private Connection Connec = null;
-    private User User = null;
+    private User User;
 
     //private final User[] ArrayUser = {new User("Apicultor", "12345"), new User("Gerente", "123"), new User("Investigador", "56789")};
 
@@ -31,12 +31,9 @@ public class Conexcion {
 
     public Connection getConexion( ) {
         
+      
         
         try {
-            
-            userLogin = User.getRol();        
-            
-            password = (userLogin == "Apicultor")? "12345": (userLogin == "Gerente")?"123":(userLogin == "Investigador")? "56789":null;        
             
             Class.forName("com.mysql.jdbc.Driver");
             Connec = (Connection) DriverManager.getConnection(this.URL, this.userLogin, this.password);

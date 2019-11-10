@@ -10,6 +10,7 @@ import com.mysql.jdbc.CallableStatement;
 import com.mysql.jdbc.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -20,9 +21,19 @@ public class consultaUser extends Conexcion {
     public boolean consultaUser(User User) {
 
         try {
-            System.out.println(User.getRol());
+           
+            setUserLogin(User.getRol());
+            
+            if ("Apicultor".equals(getUserLogin())) setPassword("12345");
+            if ("Gerente".equals(getUserLogin())) setPassword("123");
+            if ("Investigador".equals(getUserLogin())) setPassword("59");  
+            
+            
+            System.out.println("ROL" + getUserLogin());
+            System.out.println("ROL" + getPassword());
             
             Connection con = getConexion();
+            
             CallableStatement Sentencia = (CallableStatement) con.prepareCall("{call consultaUser(?,?,?)}");
             
             
@@ -41,7 +52,7 @@ public class consultaUser extends Conexcion {
 
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.err.println(e + " consulta");
             return false;
         }
