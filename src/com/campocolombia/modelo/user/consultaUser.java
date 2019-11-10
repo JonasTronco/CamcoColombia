@@ -46,7 +46,9 @@ public class consultaUser extends Conexcion {
             ResultSet result = Sentencia.executeQuery();
 
             if (result.next()) {
-                return result.getBoolean(1);
+                
+                return result.getInt(1) == 1;
+                
             } else {
                 return false;
 
