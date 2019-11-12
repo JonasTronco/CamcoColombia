@@ -5,10 +5,10 @@
  */
 package com.campocolombia.controlador;
 
-import com.campocolombia.modelo.user.User;
-import com.campocolombia.modelo.user.consultaUser;
-import com.campocolombia.vista.login;
-import com.campocolombia.vista.principal;
+import com.campocolombia.modelo.user.Usuario;
+import com.campocolombia.modelo.user.ConsultaUsuario;
+import com.campocolombia.vista.Login;
+import com.campocolombia.vista.Principal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -17,61 +17,57 @@ import javax.swing.JOptionPane;
  *
  * @author Jonattan
  */
-public  class controladorLogin implements ActionListener{
-    
-    private User User;
-    private consultaUser consultaUser;
-    private login frmLogin;
-    private principal frmPrincipal;
+public class ControladorLogin implements ActionListener {
 
-    public controladorLogin(User User, consultaUser consultaUser, login login, principal principal) {
-        this.User = User;
-        this.consultaUser = consultaUser;
-        this.frmLogin = login;    
+    //Variables
+    private Usuario usuario;
+    private ConsultaUsuario consultaUsuario;
+    private Login frmLogin;
+    private Principal frmPrincipal;
+
+    public ControladorLogin(Usuario User, ConsultaUsuario consultaUser, Login login, Principal principal) {
+        this.usuario = User;
+        this.consultaUsuario = consultaUser;
+        this.frmLogin = login;
         this.frmPrincipal = principal;
         this.frmLogin.botonIngresar.addActionListener(this);
     }
-    
+
     @Override
-    public void actionPerformed( ActionEvent e){
-        
+    public void actionPerformed(ActionEvent e) {
+
         if (e.getSource() == frmLogin.botonIngresar) {
-            User.setNick(frmLogin.textUserName.getText());
-            User.setPassword(frmLogin.textUserPassword.getText());
-            User.setRol(frmLogin.selectRol.getSelectedItem().toString());
-            
-            
-            
-            
+            usuario.setUsuario(frmLogin.textUserName.getText());
+            usuario.setPassword(frmLogin.textUserPassword.getText());
+            usuario.setTipo(frmLogin.selectRol.getSelectedItem().toString());
+
             try {
-                
-                if (consultaUser.consultaUser(User)) {
-                frmPrincipal.setVisible(true);
-                frmLogin.setVisible(false);
-                limpiar();
-            }else{
-                JOptionPane.showMessageDialog(null, "Los datos no son correctos");
-                limpiar();
-            }
-                
+
+                if (consultaUsuario.consultaUsuario(usuario)) {
+                    
+                    frmPrincipal.setVisible(true);
+                    frmLogin.setVisible(false);
+                    limpiar();
+                    
+                } else {
+                    
+                    JOptionPane.showMessageDialog(null, "Los datos no son correctos");
+                    limpiar();
+                    
+                }
+
             } catch (Exception w) {
-                System.err.println(w + " Login" );
+                JOptionPane.showMessageDialog(null, "Error: " + w);
             }
-            
+
         }
-        
-    
+
     }
-    
-    public void limpiar(){
+
+    public void limpiar() {
         
-        //frmLogin.textUserName.setText(null);
         frmLogin.textUserPassword.setText(null);
         
     }
-    
-      
-    
-    
-    
+
 }

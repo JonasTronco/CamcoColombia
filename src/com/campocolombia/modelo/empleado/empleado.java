@@ -11,7 +11,7 @@ import com.mysql.fabric.xmlrpc.base.Data;
  *
  * @author Jonattan
  */
-public class empleado {
+public class Empleado {
 
     int iIdEmpleado;
     String NombreEmpleado;

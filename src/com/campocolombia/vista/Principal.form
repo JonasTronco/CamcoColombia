@@ -341,6 +341,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Nombre Empleador"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="labCargoLogin">
           <Properties>
@@ -349,6 +352,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cargo"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
@@ -391,13 +397,13 @@
                   <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                   <Component id="btmGestionAbejas" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="jButton13" min="-2" pref="142" max="-2" attributes="0"/>
+                  <Component id="btmProduccion" min="-2" pref="142" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jButton12" min="-2" pref="138" max="-2" attributes="0"/>
+                  <Component id="btmMantenimiento" min="-2" pref="138" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                  <Component id="jButton14" min="-2" pref="144" max="-2" attributes="0"/>
+                  <Component id="btmClima" min="-2" pref="144" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="jButton15" min="-2" pref="144" max="-2" attributes="0"/>
+                  <Component id="btmGestionUser" min="-2" pref="144" max="-2" attributes="0"/>
                   <EmptySpace pref="85" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -412,11 +418,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jButton15" alignment="1" min="-2" pref="129" max="-2" attributes="0"/>
-                      <Component id="jButton14" alignment="1" min="-2" pref="129" max="-2" attributes="0"/>
+                      <Component id="btmGestionUser" alignment="1" min="-2" pref="129" max="-2" attributes="0"/>
+                      <Component id="btmClima" alignment="1" min="-2" pref="129" max="-2" attributes="0"/>
                       <Component id="btmGestionAbejas" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton13" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton12" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btmProduccion" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btmMantenimiento" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="237" max="32767" attributes="0"/>
                   <Component id="btmSalir" min="-2" pref="33" max="-2" attributes="0"/>
@@ -439,8 +445,11 @@
             </Property>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton12">
+        <Component class="javax.swing.JButton" name="btmMantenimiento">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -454,8 +463,11 @@
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton13">
+        <Component class="javax.swing.JButton" name="btmProduccion">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -469,8 +481,11 @@
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton14">
+        <Component class="javax.swing.JButton" name="btmClima">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -484,8 +499,11 @@
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton15">
+        <Component class="javax.swing.JButton" name="btmGestionUser">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -501,6 +519,9 @@
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="btmSalir">
           <Properties>
@@ -515,6 +536,9 @@
               <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

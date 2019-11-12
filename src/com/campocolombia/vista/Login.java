@@ -55,7 +55,6 @@ public class Login extends javax.swing.JFrame {
 
         textUserPassword.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         textUserPassword.setBorder(null);
-        textUserPassword.setEchoChar('*');
 
         labPassword.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
         labPassword.setText("Contraseña");
@@ -153,6 +152,18 @@ public class Login extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

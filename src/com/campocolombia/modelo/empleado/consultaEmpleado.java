@@ -9,6 +9,6 @@ package com.campocolombia.modelo.empleado;
  *
  * @author Jonattan
  */
-public class consultaEmpleado {
+public class ConsultaEmpleado {
     
 }
