@@ -5,7 +5,7 @@
  */
 package com.campocolombia.modelo.gestionabejas;
 
-import com.campocolombia.modelo.Conexcion;
+import com.campocolombia.modelo.Conexion;
 import com.mysql.jdbc.Connection;
 import java.sql.PreparedStatement;
 
@@ -13,7 +13,7 @@ import java.sql.PreparedStatement;
  *
  * @author Jonattan
  */
-public class ConsultaColmena extends Conexcion{
+public class ConsultaColmena extends Conexion{
     
     public boolean registrar(Colmena Col) {
         
