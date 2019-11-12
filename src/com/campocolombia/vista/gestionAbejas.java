@@ -17,6 +17,7 @@ public class gestionAbejas extends javax.swing.JFrame {
     public gestionAbejas() {
         initComponents();
         setLocationRelativeTo(null);
+        setVisible(false);
     }
 
     /**

@@ -51,10 +51,10 @@ public class principal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         btmGestionAbejas = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
+        btmMantenimiento = new javax.swing.JButton();
+        btmProduccion = new javax.swing.JButton();
+        btmClima = new javax.swing.JButton();
+        btmGestionUser = new javax.swing.JButton();
         btmSalir = new javax.swing.JLabel();
 
         jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -239,29 +239,29 @@ public class principal extends javax.swing.JFrame {
         btmGestionAbejas.setBorder(null);
         btmGestionAbejas.setFocusable(false);
 
-        jButton12.setBackground(new java.awt.Color(255, 255, 255));
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mantenimiento.png"))); // NOI18N
-        jButton12.setBorder(null);
-        jButton12.setBorderPainted(false);
-        jButton12.setFocusable(false);
+        btmMantenimiento.setBackground(new java.awt.Color(255, 255, 255));
+        btmMantenimiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mantenimiento.png"))); // NOI18N
+        btmMantenimiento.setBorder(null);
+        btmMantenimiento.setBorderPainted(false);
+        btmMantenimiento.setFocusable(false);
 
-        jButton13.setBackground(new java.awt.Color(255, 255, 255));
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Inventario.png"))); // NOI18N
-        jButton13.setBorder(null);
-        jButton13.setBorderPainted(false);
-        jButton13.setFocusable(false);
+        btmProduccion.setBackground(new java.awt.Color(255, 255, 255));
+        btmProduccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Inventario.png"))); // NOI18N
+        btmProduccion.setBorder(null);
+        btmProduccion.setBorderPainted(false);
+        btmProduccion.setFocusable(false);
 
-        jButton14.setBackground(new java.awt.Color(255, 255, 255));
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Clima.png"))); // NOI18N
-        jButton14.setBorder(null);
-        jButton14.setBorderPainted(false);
-        jButton14.setFocusable(false);
+        btmClima.setBackground(new java.awt.Color(255, 255, 255));
+        btmClima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Clima.png"))); // NOI18N
+        btmClima.setBorder(null);
+        btmClima.setBorderPainted(false);
+        btmClima.setFocusable(false);
 
-        jButton15.setBackground(new java.awt.Color(255, 255, 255));
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/User.png"))); // NOI18N
-        jButton15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton15.setBorderPainted(false);
-        jButton15.setFocusable(false);
+        btmGestionUser.setBackground(new java.awt.Color(255, 255, 255));
+        btmGestionUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/User.png"))); // NOI18N
+        btmGestionUser.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btmGestionUser.setBorderPainted(false);
+        btmGestionUser.setFocusable(false);
 
         btmSalir.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         btmSalir.setForeground(new java.awt.Color(51, 51, 255));
@@ -276,13 +276,13 @@ public class principal extends javax.swing.JFrame {
                 .addGap(64, 64, 64)
                 .addComponent(btmGestionAbejas)
                 .addGap(40, 40, 40)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btmProduccion, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btmMantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btmClima, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
-                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btmGestionUser, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(85, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -294,11 +294,11 @@ public class principal extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(98, 98, 98)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btmGestionUser, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btmClima, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btmGestionAbejas)
-                    .addComponent(jButton13)
-                    .addComponent(jButton12))
+                    .addComponent(btmProduccion)
+                    .addComponent(btmMantenimiento))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
                 .addComponent(btmSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
@@ -345,13 +345,13 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btmGestionAbejas;
-    private javax.swing.JLabel btmSalir;
+    public javax.swing.JButton btmClima;
+    public javax.swing.JButton btmGestionAbejas;
+    public javax.swing.JButton btmGestionUser;
+    public javax.swing.JButton btmMantenimiento;
+    public javax.swing.JButton btmProduccion;
+    public javax.swing.JLabel btmSalir;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -370,7 +370,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JLabel labCargoLogin;
-    private javax.swing.JLabel labNombreEmpleadoLogin;
+    public javax.swing.JLabel labCargoLogin;
+    public javax.swing.JLabel labNombreEmpleadoLogin;
     // End of variables declaration//GEN-END:variables
 }

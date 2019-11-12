@@ -20,6 +20,9 @@ public class CampoColombia {
         principal frmPrincipal = new principal();
         
         controladorLogin ctrlLogin = new controladorLogin(uSer, cUser, frmLogin,frmPrincipal);
+        
+        
+        
         frmLogin.setVisible(true);
     }
 
