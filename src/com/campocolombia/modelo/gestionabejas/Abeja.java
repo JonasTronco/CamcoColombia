@@ -16,7 +16,8 @@ public class Abeja {
     private String RazaAbejas;
     private double PesoAbejas;
     private double AltoAbejas;
-    private double colorAbejas;
+    private double Ancho;
+    private String colorAbejas;
 
     public int getIdAbejas() {
         return IdAbejas;
@@ -58,12 +59,20 @@ public class Abeja {
         this.AltoAbejas = AltoAbejas;
     }
 
-    public double getColorAbejas() {
+    public String getColorAbejas() {
         return colorAbejas;
     }
 
-    public void setColorAbejas(double colorAbejas) {
+    public void setColorAbejas(String colorAbejas) {
         this.colorAbejas = colorAbejas;
+    }
+
+    public double getAncho() {
+        return Ancho;
+    }
+
+    public void setAncho(double Ancho) {
+        this.Ancho = Ancho;
     }
     
     
