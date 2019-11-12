@@ -35,31 +35,34 @@ public class GestionAbeja extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        selectConsultaAbejas = new javax.swing.JComboBox<>();
         jButton6 = new javax.swing.JButton();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        Borrado = new javax.swing.JButton();
+        selectBorradoAbeja = new javax.swing.JComboBox<>();
+        btmBorradoAbeja = new javax.swing.JButton();
+        btmModificarAbeja = new javax.swing.JButton();
+        textIDAbeja = new javax.swing.JTextField();
+        jSeparator9 = new javax.swing.JSeparator();
+        jLabel14 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        textNombreAbejas = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        textRazaAbeja = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
-        jTextField3 = new javax.swing.JTextField();
+        textPesoAbeja = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        textAltoAbeja = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
-        jTextField5 = new javax.swing.JTextField();
+        textAnchoAbeja = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        textColorAbeja = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btmIngresarAbeja = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -69,15 +72,18 @@ public class GestionAbeja extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jTextField8 = new javax.swing.JTextField();
         jSeparator7 = new javax.swing.JSeparator();
-        jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jPanel8 = new javax.swing.JPanel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        selectConsultaColmena = new javax.swing.JComboBox<>();
         jButton9 = new javax.swing.JButton();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        Borrado1 = new javax.swing.JButton();
+        selectBorradoComena = new javax.swing.JComboBox<>();
+        btmBorradoColmena = new javax.swing.JButton();
+        jSeparator10 = new javax.swing.JSeparator();
+        textIDAbeja1 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -127,19 +133,34 @@ public class GestionAbeja extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        jComboBox2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectConsultaAbejas.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        selectConsultaAbejas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por ID", "Por Nombre", "Por Raza", "" }));
 
         jButton6.setBackground(new java.awt.Color(255, 255, 255));
         jButton6.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jButton6.setText("Consulta");
 
-        jComboBox3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectBorradoAbeja.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        selectBorradoAbeja.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por ID" }));
 
-        Borrado.setBackground(new java.awt.Color(255, 255, 255));
-        Borrado.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        Borrado.setText("Borrado");
+        btmBorradoAbeja.setBackground(new java.awt.Color(255, 255, 255));
+        btmBorradoAbeja.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        btmBorradoAbeja.setText("Borrado");
+
+        btmModificarAbeja.setBackground(new java.awt.Color(255, 255, 255));
+        btmModificarAbeja.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        btmModificarAbeja.setText("Modificar");
+        btmModificarAbeja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmModificarAbejaActionPerformed(evt);
+            }
+        });
+
+        textIDAbeja.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        textIDAbeja.setBorder(null);
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel14.setText("ID");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -147,32 +168,54 @@ public class GestionAbeja extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addContainerGap(24, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(67, 67, 67)
                         .addComponent(jButton6)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addContainerGap(24, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(11, 11, 11)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textIDAbeja)
+                                    .addComponent(jSeparator9)))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(selectConsultaAbejas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(selectBorradoAbeja, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Borrado)
-                .addGap(51, 51, 51))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(btmModificarAbeja)
+                        .addGap(52, 52, 52))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(btmBorradoAbeja)
+                        .addGap(49, 49, 49))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel14))
+                    .addComponent(textIDAbeja, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btmModificarAbeja)
+                .addGap(24, 24, 24)
+                .addComponent(selectConsultaAbejas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton6)
-                .addGap(18, 18, 18)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Borrado)
+                .addGap(29, 29, 29)
+                .addComponent(selectBorradoAbeja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btmBorradoAbeja)
                 .addContainerGap())
         );
 
@@ -183,28 +226,28 @@ public class GestionAbeja extends javax.swing.JFrame {
         jLabel5.setText("Nombre");
         jPanel6.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        textNombreAbejas.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        textNombreAbejas.setBorder(null);
+        textNombreAbejas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                textNombreAbejasActionPerformed(evt);
             }
         });
-        jPanel6.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 228, 30));
+        jPanel6.add(textNombreAbejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 228, 30));
         jPanel6.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 42, 228, 10));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel6.setText("Raza");
         jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jTextField2.setBorder(null);
-        jPanel6.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 59, 228, 30));
+        textRazaAbeja.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        textRazaAbeja.setBorder(null);
+        jPanel6.add(textRazaAbeja, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 59, 228, 30));
         jPanel6.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 94, 228, 12));
 
-        jTextField3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jTextField3.setBorder(null);
-        jPanel6.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 230, 30));
+        textPesoAbeja.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        textPesoAbeja.setBorder(null);
+        jPanel6.add(textPesoAbeja, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 230, 30));
         jPanel6.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 138, 228, 16));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
@@ -219,39 +262,29 @@ public class GestionAbeja extends javax.swing.JFrame {
         jLabel11.setText("Alto");
         jPanel6.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
-        jTextField4.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jTextField4.setBorder(null);
-        jPanel6.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 70, 30));
+        textAltoAbeja.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        textAltoAbeja.setBorder(null);
+        jPanel6.add(textAltoAbeja, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 70, 30));
         jPanel6.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 63, 10));
 
-        jTextField5.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jTextField5.setBorder(null);
-        jPanel6.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 60, 30));
+        textAnchoAbeja.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        textAnchoAbeja.setBorder(null);
+        jPanel6.add(textAnchoAbeja, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 60, 30));
         jPanel6.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 60, 10));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel13.setText("Color");
         jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
-        jTextField7.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jTextField7.setBorder(null);
-        jPanel6.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 228, 30));
+        textColorAbeja.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        textColorAbeja.setBorder(null);
+        jPanel6.add(textColorAbeja, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 228, 30));
         jPanel6.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 228, 10));
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jButton4.setText("Ingresar");
-        jPanel6.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
-
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jButton5.setText("Modificar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, -1, -1));
+        btmIngresarAbeja.setBackground(new java.awt.Color(255, 255, 255));
+        btmIngresarAbeja.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        btmIngresarAbeja.setText("Ingresar");
+        jPanel6.add(btmIngresarAbeja, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -276,8 +309,8 @@ public class GestionAbeja extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE))
-                .addGap(0, 13, Short.MAX_VALUE))
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE))
+                .addGap(0, 1, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 590, 360));
@@ -311,20 +344,10 @@ public class GestionAbeja extends javax.swing.JFrame {
         jPanel7.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 190, 30));
         jPanel7.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 180, 10));
 
-        jButton7.setBackground(new java.awt.Color(255, 255, 255));
-        jButton7.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jButton7.setText("Modificar");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
-
         jButton8.setBackground(new java.awt.Color(255, 255, 255));
         jButton8.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jButton8.setText("Ingresar");
-        jPanel7.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
+        jPanel7.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -334,53 +357,87 @@ public class GestionAbeja extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jComboBox4.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectConsultaColmena.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        selectConsultaColmena.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por ID", "Por Tipo", "Por Cantidad", "" }));
 
         jButton9.setBackground(new java.awt.Color(255, 255, 255));
         jButton9.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jButton9.setText("Consulta");
 
-        jComboBox5.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectBorradoComena.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        selectBorradoComena.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por ID" }));
 
-        Borrado1.setBackground(new java.awt.Color(255, 255, 255));
-        Borrado1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        Borrado1.setText("Borrado");
+        btmBorradoColmena.setBackground(new java.awt.Color(255, 255, 255));
+        btmBorradoColmena.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        btmBorradoColmena.setText("Borrado");
+
+        textIDAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        textIDAbeja1.setBorder(null);
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel15.setText("ID");
+
+        jButton7.setBackground(new java.awt.Color(255, 255, 255));
+        jButton7.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jButton7.setText("Modificar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(jButton7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addContainerGap(23, Short.MAX_VALUE)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(jButton9)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addGap(0, 11, Short.MAX_VALUE)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(selectConsultaColmena, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(selectBorradoComena, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGap(67, 67, 67)
-                                .addComponent(jButton9))
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGap(70, 70, 70)
-                                .addComponent(Borrado1)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(jLabel15)
+                                .addGap(11, 11, 11)
+                                .addComponent(textIDAbeja1))))
+                    .addComponent(jSeparator10, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btmBorradoColmena)
+                .addGap(54, 54, 54))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textIDAbeja1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15))
+                .addGap(2, 2, 2)
+                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7)
+                .addGap(24, 24, 24)
+                .addComponent(selectConsultaColmena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton9)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selectBorradoComena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Borrado1)
+                .addComponent(btmBorradoColmena)
                 .addContainerGap())
         );
 
@@ -403,14 +460,14 @@ public class GestionAbeja extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 7, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -455,13 +512,13 @@ public class GestionAbeja extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btmModificarAbejaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmModificarAbejaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btmModificarAbejaActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textNombreAbejasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreAbejasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textNombreAbejasActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
@@ -472,7 +529,7 @@ public class GestionAbeja extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        //<editor-fold defaultstate="collapsed" selectConsultaAbejask and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
@@ -506,24 +563,22 @@ public class GestionAbeja extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Borrado;
-    private javax.swing.JButton Borrado1;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    public javax.swing.JButton btmBorradoAbeja;
+    public javax.swing.JButton btmBorradoColmena;
+    public javax.swing.JButton btmIngresarAbeja;
+    public javax.swing.JButton btmModificarAbeja;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -543,6 +598,7 @@ public class GestionAbeja extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -550,14 +606,21 @@ public class GestionAbeja extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    public javax.swing.JComboBox<String> selectBorradoAbeja;
+    private javax.swing.JComboBox<String> selectBorradoComena;
+    public javax.swing.JComboBox<String> selectConsultaAbejas;
+    public javax.swing.JComboBox<String> selectConsultaColmena;
+    public javax.swing.JTextField textAltoAbeja;
+    public javax.swing.JTextField textAnchoAbeja;
+    public javax.swing.JTextField textColorAbeja;
+    public javax.swing.JTextField textIDAbeja;
+    public javax.swing.JTextField textIDAbeja1;
+    public javax.swing.JTextField textNombreAbejas;
+    public javax.swing.JTextField textPesoAbeja;
+    public javax.swing.JTextField textRazaAbeja;
     // End of variables declaration//GEN-END:variables
 }
