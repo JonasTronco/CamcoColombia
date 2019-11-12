@@ -1,10 +1,10 @@
 package com.campocolombia;
 
-import com.campocolombia.controlador.controladorLogin;
-import com.campocolombia.modelo.user.User;
-import com.campocolombia.modelo.user.consultaUser;
-import com.campocolombia.vista.login;
-import com.campocolombia.vista.principal;
+import com.campocolombia.controlador.ControladorLogin;
+import com.campocolombia.modelo.user.Usuario;
+import com.campocolombia.modelo.user.ConsultaUsuario;
+import com.campocolombia.vista.Login;
+import com.campocolombia.vista.Principal;
 
 /**
  *
@@ -14,15 +14,12 @@ public class CampoColombia {
 
     public static void main(String[] args) {
 
-        User uSer = new User();
-        consultaUser cUser = new consultaUser();
-        login frmLogin = new login();
-        principal frmPrincipal = new principal();
+        Usuario uSer = new Usuario();
+        ConsultaUsuario cUser = new ConsultaUsuario();
+        Login frmLogin = new Login();
+        Principal frmPrincipal = new Principal();
         
-        controladorLogin ctrlLogin = new controladorLogin(uSer, cUser, frmLogin,frmPrincipal);
-        
-        
-        
+        ControladorLogin ctrlLogin = new ControladorLogin(uSer, cUser, frmLogin,frmPrincipal);
         frmLogin.setVisible(true);
     }
 

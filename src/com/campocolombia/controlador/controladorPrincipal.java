@@ -5,15 +5,14 @@
  */
 package com.campocolombia.controlador;
 
-import com.campocolombia.modelo.user.User;
-import com.campocolombia.modelo.user.consultaUser;
-import com.campocolombia.vista.gestionAbejas;
+
+import com.campocolombia.modelo.user.ConsultaUsuario;
+import com.campocolombia.modelo.user.Usuario;
 import com.campocolombia.vista.gestionClima;
 import com.campocolombia.vista.gestionMantenimiento;
 import com.campocolombia.vista.gestionProduccion;
 import com.campocolombia.vista.gestionUsuarios;
-import com.campocolombia.vista.login;
-import com.campocolombia.vista.principal;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -24,8 +23,8 @@ import javax.swing.JOptionPane;
  */
 public class controladorPrincipal implements ActionListener{
 
-    private consultaUser consultaUser;
-    private User User;
+    private ConsultaUsuario consultaUser;
+    private Usuario User;
     private principal frmPrincipal;
     private gestionUsuarios frmGestionUsuarios;
     private gestionClima frmGestionClima;
