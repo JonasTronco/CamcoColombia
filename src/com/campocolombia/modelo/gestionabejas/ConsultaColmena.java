@@ -6,8 +6,11 @@
 package com.campocolombia.modelo.gestionabejas;
 
 import com.campocolombia.modelo.Conexcion;
+import com.mysql.jdbc.CallableStatement;
 import com.mysql.jdbc.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -17,16 +20,29 @@ public class ConsultaColmena extends Conexcion{
     
     public boolean registrar(Colmena Col) {
         
-        PreparedStatement ps = null;
-        Connection con =  getConexion();        
-        String SQL = "call registrarColmena(?,?,?,?)";
-        
         try {
-            ps = con.prepareStatement(SQL);
-            //ps.setString(1, Col.getAbejas_IdAbejas());
-        } catch (Exception e) {
+           
+            Connection con = getConexion();
+            
+            CallableStatement Sentencia = (CallableStatement) con.prepareCall("{call consultaUser(?,?,?)}");
+            
+            
+
+            ResultSet result = Sentencia.executeQuery();
+
+            if (result.next()) {
+                
+                return result.getInt(1) == 1;
+                
+            } else {
+                return false;
+
+            }
+
+        } catch (SQLException e) {
+            System.err.println(e + " consulta");
+            return false;
         }
-        return false;
     
     }
 }
