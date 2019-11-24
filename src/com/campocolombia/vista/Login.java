@@ -5,19 +5,21 @@
  */
 package com.campocolombia.vista;
 
+import com.campocolombia.controlador.ControladorLogin;
+
 /**
  *
  * @author Jonattan
  */
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form login
-     */
+       //Variables
+    public ControladorLogin controlador = null;
+
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
-        setVisible(false);
+        setVisible(true);
     }
 
     /**
@@ -41,7 +43,7 @@ public class Login extends javax.swing.JFrame {
         selectRol = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -55,6 +57,7 @@ public class Login extends javax.swing.JFrame {
 
         textUserPassword.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         textUserPassword.setBorder(null);
+        textUserPassword.setEchoChar('*');
 
         labPassword.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
         labPassword.setText("Contraseña");
@@ -175,6 +178,11 @@ public class Login extends javax.swing.JFrame {
                 new Login().setVisible(true);
             }
         });
+    }
+    
+     public void setControlador(ControladorLogin controlador) {
+        this.controlador = controlador;
+        this.botonIngresar.addActionListener(controlador);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

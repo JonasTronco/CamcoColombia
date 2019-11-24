@@ -6,6 +6,7 @@
 package com.campocolombia.modelo.user;
 
 import com.campocolombia.modelo.Conexion;
+import com.campocolombia.vista.Login;
 import com.mysql.jdbc.CallableStatement;
 import com.mysql.jdbc.Connection;
 import java.sql.SQLException;
@@ -15,6 +16,14 @@ import java.sql.SQLException;
  * @author Jonattan
  */
 public class ConsultaUsuario extends Conexion {
+    
+    //Variables
+    Login formularioLogin;
+
+    //Método constructor
+    public ConsultaUsuario(Login formularioLogin) {
+        this.formularioLogin = formularioLogin;
+    }
     
     //Método consultar usuario
     public boolean consultaUsuario(Usuario usuario) {

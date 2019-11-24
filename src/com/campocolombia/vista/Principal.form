@@ -266,7 +266,7 @@
     </Container>
   </NonVisualComponents>
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -307,27 +307,45 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel7" min="-2" pref="487" max="-2" attributes="0"/>
-                  <EmptySpace pref="295" max="32767" attributes="0"/>
+                  <EmptySpace pref="138" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="labNombreEmpleadoLogin" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="labCargoLogin" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="labNombreEmpleadoLogin" min="-2" max="-2" attributes="0"/>
+                      <Component id="labCargoLogin" min="-2" pref="110" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblUsuarioEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCargoEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                  <Component id="labNombreEmpleadoLogin" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                  <Component id="labCargoLogin" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="119" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel7" min="-2" pref="202" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="25" max="32767" attributes="0"/>
+                          <Component id="jLabel7" min="-2" pref="202" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="lblUsuarioEmpleado" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="lblCargoEmpleado" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="labNombreEmpleadoLogin" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="labCargoLogin" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -376,6 +394,28 @@
             </Property>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="lblUsuarioEmpleado">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Light" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel1"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCargoEmpleado">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Light" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel2"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel5">
@@ -393,23 +433,58 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                  <Component id="btmGestionAbejas" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="btmProduccion" min="-2" pref="142" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="btmMantenimiento" min="-2" pref="138" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                  <Component id="btmClima" min="-2" pref="144" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="btmGestionUser" min="-2" pref="144" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="btmGestionAbejas" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btmProduccion" min="-2" pref="142" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="btmMantenimiento" min="-2" pref="138" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="btmClima" min="-2" pref="144" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="btmGestionUser" min="-2" pref="144" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                  <Component id="lblTituloA1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="btmGestionAbejas1" min="-2" pref="118" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
                   <EmptySpace pref="85" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btmSalir" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="btnSalir" min="-2" pref="87" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="lblTituloE" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                      <Component id="lblTituloA" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+                      <Component id="lblTituloP" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                      <Component id="lblTituloM" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                      <Component id="lblTituloCl" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="315" max="32767" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -424,9 +499,33 @@
                       <Component id="btmProduccion" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="btmMantenimiento" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="237" max="32767" attributes="0"/>
-                  <Component id="btmSalir" min="-2" pref="33" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="lblTituloE" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="35" max="32767" attributes="0"/>
+                  <Component id="btmGestionAbejas1" min="-2" pref="118" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <Component id="btnSalir" min="-2" pref="43" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblTituloA1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="252" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblTituloA" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTituloP" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTituloM" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTituloCl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="253" max="32767" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -523,22 +622,81 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="btmSalir">
+        <Component class="javax.swing.JButton" name="btmGestionAbejas1">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Light" size="24" style="0"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="33" red="33" type="rgb"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/Ciencia.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Salir"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Por defecto"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
             </Property>
+            <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnSalir">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Light" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Salir"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblTituloA">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Light" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Abejas"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblTituloP">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Light" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Produccion"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblTituloM">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Light" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Mantenimiento"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblTituloCl">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Light" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Clima"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblTituloE">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Light" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Empleado"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblTituloA1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Light" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Investigaci&#xf3;n"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

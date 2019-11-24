@@ -5,15 +5,17 @@
  */
 package com.campocolombia.vista;
 
+import com.campocolombia.controlador.ControladorGestionAbeja;
+
 /**
  *
  * @author Jonattan
  */
 public class GestionAbeja extends javax.swing.JFrame {
 
-    /**
-     * Creates new form gestionAbejas
-     */
+     //Variables
+    public ControladorGestionAbeja controlador = null;
+    
     public GestionAbeja() {
         initComponents();
         setLocationRelativeTo(null);
@@ -86,10 +88,11 @@ public class GestionAbeja extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         btmModificarColmena = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        btnAtras = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblConsulta = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -476,36 +479,47 @@ public class GestionAbeja extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAtras.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        btnAtras.setText("Atras");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblConsulta);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(246, 246, 246)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(260, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(1030, Short.MAX_VALUE)
+                .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(256, 256, 256)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(256, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addContainerGap(234, Short.MAX_VALUE)
+                .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(37, 37, 37)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(37, Short.MAX_VALUE)))
         );
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 1150, 310));
@@ -562,6 +576,17 @@ public class GestionAbeja extends javax.swing.JFrame {
             }
         });
     }
+    
+        //Método set controlador 
+    public void setControlador(ControladorGestionAbeja controlador) {
+        
+        //Bototones Abeja
+        this.controlador = controlador;
+        this.btmIngresarAbeja.addActionListener(controlador);
+        this.btmConsultaAbejas.addActionListener(controlador);
+        this.btmModificarAbeja.addActionListener(controlador);
+        this.btmBorradoAbeja.addActionListener(controlador);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btmBorradoAbeja;
@@ -572,6 +597,7 @@ public class GestionAbeja extends javax.swing.JFrame {
     public javax.swing.JButton btmIngresarColmena;
     public javax.swing.JButton btmModificarAbeja;
     public javax.swing.JButton btmModificarColmena;
+    public javax.swing.JButton btnAtras;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -607,7 +633,6 @@ public class GestionAbeja extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField8;
     public javax.swing.JComboBox<String> selectBorradoAbeja;
@@ -615,6 +640,7 @@ public class GestionAbeja extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> selectConsultaAbejas;
     public javax.swing.JComboBox<String> selectConsultaColmena;
     public javax.swing.JComboBox<String> selectTipoAbeja;
+    public javax.swing.JTable tblConsulta;
     public javax.swing.JTextField textAltoAbeja;
     public javax.swing.JTextField textAnchoAbeja;
     public javax.swing.JTextField textColorAbeja;

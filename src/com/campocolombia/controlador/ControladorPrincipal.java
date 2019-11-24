@@ -5,80 +5,60 @@
  */
 package com.campocolombia.controlador;
 
-import com.campocolombia.modelo.user.ConsultaUsuario;
-import com.campocolombia.modelo.user.Usuario;
+import com.campocolombia.modelo.gestionabejas.Abeja;
+import com.campocolombia.modelo.gestionabejas.ConsultaAbeja;
 import com.campocolombia.vista.GestionAbeja;
 import com.campocolombia.vista.Login;
 import com.campocolombia.vista.Principal;
-import com.campocolombia.vista.GestionClima;
-import com.campocolombia.vista.GestionMantenimiento;
-import com.campocolombia.vista.GestionProduccion;
-import com.campocolombia.vista.GestionUsuarios;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
+
 
 /**
  *
- * @author Jonattan
+ * @author NIKOFERO
  */
 public class ControladorPrincipal implements ActionListener {
 
-    private ConsultaUsuario consultaUser;
-    private Usuario User;
-    private Principal frmPrincipal;
-    private GestionUsuarios frmGestionUsuarios;
-    private GestionClima frmGestionClima;
-    private GestionMantenimiento frmGestionMantenimiento;
-    private GestionProduccion frmProduccion;
-    private GestionAbeja frmAbejas;
-    private Login frmLogin;
+    //Variables
+    Login formularioLogin; 
+    Principal formularioMenu;
 
-    public ControladorPrincipal(ConsultaUsuario consultaUser, Usuario User, Principal frmPrincipal, GestionUsuarios frmGestionUsuarios, GestionClima frmGestionClima, GestionMantenimiento frmGestionMantenimiento, GestionProduccion frmProduccion, GestionAbeja frmAbejas, Login frmLogin) {
-        this.consultaUser = consultaUser;
-        this.User = User;
-        this.frmPrincipal = frmPrincipal;
-        this.frmGestionUsuarios = frmGestionUsuarios;
-        this.frmGestionClima = frmGestionClima;
-        this.frmGestionMantenimiento = frmGestionMantenimiento;
-        this.frmProduccion = frmProduccion;
-        this.frmAbejas = frmAbejas;
-        this.frmLogin = frmLogin;
+    //Método constructor
+    public ControladorPrincipal(Login formularioLogin, Principal formularioMenu) {
+        this.formularioLogin = formularioLogin;
+        this.formularioMenu = formularioMenu;
     }
 
-   
-
+    //Actionlistener
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        frmPrincipal.labNombreEmpleadoLogin.setText(User.getUsuario());
-        frmPrincipal.labCargoLogin.setText(User.getTipo());
+        //Botòn salir
+        if (e.getSource() == formularioMenu.btnSalir) {
 
-        if (e.getSource() == frmPrincipal.btmGestionAbejas) {
-            frmAbejas.setVisible(true);
-        }
-        if (e.getSource() == frmPrincipal.btmProduccion) {
-            frmProduccion.setVisible(true);
-        }
-        if (e.getSource() == frmPrincipal.btmMantenimiento) {
-            frmGestionMantenimiento.setVisible(true);
-        }
-        if (e.getSource() == frmPrincipal.btmClima) {
-            frmGestionClima.setVisible(true);
-        }
-        if (e.getSource() == frmPrincipal.btmGestionUser) {
-            frmGestionUsuarios.setVisible(true);
-        }
+            //Se realiza el cambio de forms
+            formularioLogin.setVisible(true);
+            formularioMenu.setVisible(false);
 
-        //Boton SALIR
-        if (e.getSource() == frmPrincipal.btmSalir) {
-            //Salir, Cerrar todo pero dejar la principal
-            frmPrincipal.setVisible(false);
-            frmLogin.setVisible(true);
-            User.setPassword("");
-        }
+        } else {
+            //Botòn Abeja & Colmena
+            if (e.getSource() == formularioMenu.btmGestionAbejas) {
 
+                // Se inicializa el formulario, modelo y objetdo de las abejas & colmenas
+                GestionAbeja formularioAbeja = new GestionAbeja();
+                ConsultaAbeja modeloAbeja = new ConsultaAbeja(formularioAbeja);
+                Abeja abeja = new Abeja();
+
+                //Se inicializa el controlador de las abejas & colmenas
+                ControladorGestionAbeja controladorAbeja = new ControladorGestionAbeja(formularioMenu, formularioAbeja, modeloAbeja, abeja);
+                formularioAbeja.setControlador(controladorAbeja);
+
+                //Se realiza el cambio de forms
+                formularioAbeja.setVisible(true);
+                formularioMenu.setVisible(false);
+
+            }
+        }
     }
-
 }

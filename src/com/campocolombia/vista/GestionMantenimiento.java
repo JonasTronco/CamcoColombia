@@ -27,21 +27,287 @@ public class GestionMantenimiento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        textNombreAbejas1 = new javax.swing.JTextField();
+        jSeparator12 = new javax.swing.JSeparator();
+        jLabel19 = new javax.swing.JLabel();
+        textRazaAbeja1 = new javax.swing.JTextField();
+        jSeparator13 = new javax.swing.JSeparator();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        btmIngresarAbeja1 = new javax.swing.JButton();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jPanel9 = new javax.swing.JPanel();
+        selectBorradoAbeja1 = new javax.swing.JComboBox<>();
+        textIDAbeja1 = new javax.swing.JTextField();
+        jSeparator11 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
+        btmModificarAbeja1 = new javax.swing.JButton();
+        btmConsultaAbejas1 = new javax.swing.JButton();
+        btmBorradoAbeja1 = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel21 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mantenimiento.png"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 1, 48)); // NOI18N
+        jLabel2.setText("Gestión del Mantenimiento");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(127, 127, 127)
+                        .addComponent(jLabel2)
+                        .addGap(0, 215, Short.MAX_VALUE)))
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 150));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel18.setText("ID Colmena");
+        jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        textNombreAbejas1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        textNombreAbejas1.setBorder(null);
+        textNombreAbejas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textNombreAbejas1ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(textNombreAbejas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 228, 30));
+        jPanel10.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 228, 10));
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel19.setText("Tipo Mantenimiento");
+        jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        textRazaAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        textRazaAbeja1.setBorder(null);
+        jPanel10.add(textRazaAbeja1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 228, 30));
+        jPanel10.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 228, 12));
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel20.setText("Anotaciones");
+        jPanel10.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel23.setText("Fecha");
+        jPanel10.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+        btmIngresarAbeja1.setBackground(new java.awt.Color(255, 255, 255));
+        btmIngresarAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btmIngresarAbeja1.setText("Ingresar");
+        jPanel10.add(btmIngresarAbeja1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+
+        jDateChooser2.setBackground(new java.awt.Color(255, 255, 255));
+        jDateChooser2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jPanel10.add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 230, 30));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 190, 230, -1));
+
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+
+        selectBorradoAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        selectBorradoAbeja1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por ID" }));
+
+        textIDAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        textIDAbeja1.setBorder(null);
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel17.setText("ID");
+
+        btmModificarAbeja1.setBackground(new java.awt.Color(255, 255, 255));
+        btmModificarAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btmModificarAbeja1.setText("Modificar");
+        btmModificarAbeja1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmModificarAbeja1ActionPerformed(evt);
+            }
+        });
+
+        btmConsultaAbejas1.setBackground(new java.awt.Color(255, 255, 255));
+        btmConsultaAbejas1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btmConsultaAbejas1.setText("Consulta");
+
+        btmBorradoAbeja1.setBackground(new java.awt.Color(255, 255, 255));
+        btmBorradoAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btmBorradoAbeja1.setText("Borrado");
+
+        jDateChooser1.setBackground(new java.awt.Color(255, 255, 255));
+        jDateChooser1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel21.setText("Por Fecha");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(selectBorradoAbeja1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel17))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textIDAbeja1)
+                                    .addComponent(jSeparator11))
+                                .addGap(54, 54, 54)))))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btmModificarAbeja1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btmConsultaAbejas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btmBorradoAbeja1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(38, 38, 38))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel17)
+                            .addComponent(textIDAbeja1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(btmModificarAbeja1)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btmConsultaAbejas1)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(selectBorradoAbeja1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btmBorradoAbeja1))
+                .addGap(126, 126, 126))
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(124, 124, 124))
+        );
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 550, 670));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(104, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 600, 670));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void textNombreAbejas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreAbejas1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textNombreAbejas1ActionPerformed
+
+    private void btmModificarAbeja1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmModificarAbeja1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btmModificarAbeja1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +346,36 @@ public class GestionMantenimiento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btmBorradoAbeja1;
+    public javax.swing.JButton btmConsultaAbejas1;
+    public javax.swing.JButton btmIngresarAbeja1;
+    public javax.swing.JButton btmModificarAbeja1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JComboBox<String> selectBorradoAbeja1;
+    public javax.swing.JTextField textIDAbeja1;
+    public javax.swing.JTextField textNombreAbejas1;
+    public javax.swing.JTextField textRazaAbeja1;
     // End of variables declaration//GEN-END:variables
 }

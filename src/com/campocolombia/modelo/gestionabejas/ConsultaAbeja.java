@@ -6,84 +6,181 @@
 package com.campocolombia.modelo.gestionabejas;
 
 import com.campocolombia.modelo.Conexion;
-import com.mysql.jdbc.CallableStatement;
-import com.mysql.jdbc.Connection;
+import com.campocolombia.vista.GestionAbeja;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
- * @author Jonattan
+ * @author NIKOFERO
  */
 public class ConsultaAbeja extends Conexion {
 
-    public boolean registrar(Abeja Abe) {
+    //Variables
+    GestionAbeja formularioGestionAbeja;
+    DefaultTableModel modelo = new DefaultTableModel();
+
+    public ConsultaAbeja(GestionAbeja formularioGestionAbeja) {
+        this.formularioGestionAbeja = formularioGestionAbeja;
+    }
+
+    //Método ingresar abeja
+    public boolean ingresarAbeja(Abeja abeja) {
+
+        PreparedStatement ps = null;
+        Connection con = getConexion();
+
+        String sql = "insert into Abeja (NombreAbeja, RazaAbeja, PesoAbeja, AltoAbeja, AnchoAbeja, ColorAbeja) values(?,?,?,?,?,?)";
 
         try {
 
-            Connection con = getConexion();
-
-            CallableStatement Sentencia = (CallableStatement) con.prepareCall("{call registrarAbeja(?,?,?,?,?,?)}");
-            Sentencia.setString(1, Abe.getNombreAbejas());
-            Sentencia.setString(2, Abe.getRazaAbejas());
-            Sentencia.setDouble(3, Abe.getPesoAbejas());
-            Sentencia.setString(4, Abe.getColorAbejas());
-            Sentencia.setDouble(5, Abe.getAltoAbejas());
-            Sentencia.setDouble(6, Abe.getAncho());
-
-            Sentencia.execute();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, abeja.getNombreAbejas());
+            ps.setString(2, abeja.getRazaAbejas());
+            ps.setDouble(3, abeja.getPesoAbejas());
+            ps.setDouble(4, abeja.getAltoAbejas());
+            ps.setDouble(5, abeja.getAncho());
+            ps.setString(6, abeja.getColorAbejas());
+            ps.execute();
             return true;
 
         } catch (SQLException e) {
-            System.err.println(e + " consulta");
-            return false;
-        }
 
+            System.err.println("Error: " + e);
+            return false;
+
+        } finally {
+            try {
+
+                con.close();
+
+            } catch (SQLException e) {
+
+                System.err.println("Error: " + e);
+
+            }
+        }
     }
 
-    public boolean modificar(Abeja Abe, int ID) {
+    //Método actualizar abeja
+    public boolean ActualizarAbeja(Abeja abeja) {
+        
+        PreparedStatement ps = null;
+        Connection con = getConexion();
+
+        String sql = "Update Abeja set NombreAbeja=?, RazaAbeja=?, PesoAbeja=?, AltoAbeja=?, AnchoAbeja=?, ColorAbeja=? where IdAbeja=?";
 
         try {
 
-            Connection con = getConexion();
-
-            CallableStatement Sentencia = (CallableStatement) con.prepareCall("{call registrarAbeja(?,?,?,?,?,?,?)}");
-
-            Sentencia.setInt(1, ID);
-            Sentencia.setString(2, Abe.getNombreAbejas());
-            Sentencia.setString(3, Abe.getRazaAbejas());
-            Sentencia.setDouble(4, Abe.getPesoAbejas());
-            Sentencia.setString(5, Abe.getColorAbejas());
-            Sentencia.setDouble(6, Abe.getAltoAbejas());
-            Sentencia.setDouble(7, Abe.getAncho());
-
-            Sentencia.execute();
-
+            ps = con.prepareStatement(sql);
+            ps.setString(1, abeja.getNombreAbejas());
+            ps.setString(2, abeja.getRazaAbejas());
+            ps.setDouble(3, abeja.getPesoAbejas());
+            ps.setDouble(4, abeja.getAltoAbejas());
+            ps.setDouble(5, abeja.getAncho());
+            ps.setString(6, abeja.getColorAbejas());
+            ps.setInt(7, abeja.getIdAbejas());
+            ps.execute();
             return true;
 
         } catch (SQLException e) {
-            System.err.println(e + " consulta");
-            return false;
-        }
 
+            System.err.println("Error: " + e);
+            return false;
+
+        } finally {
+            try {
+
+                con.close();
+
+            } catch (SQLException e) {
+
+                System.err.println("Error: " + e);
+
+            }
+        }
     }
 
-    public boolean borrado(Colmena Col, int ID) {
+    //Método consulta general abeja
+    public void consultaAbejas(String consulta, String campo) {
+
+        String where = "";
+
+        if (consulta.equals("General")) {
+
+            where = "";
+
+        } else {
+
+            if (consulta.equals("Por id")) {
+                where = "where IdAbeja = " + Integer.parseInt(campo);
+            }
+        }
+
+        limpiarTabla();
+        formularioGestionAbeja.tblConsulta.setModel(modelo);
+
+        PreparedStatement ps = null;
+        Connection con = getConexion();
+
+        String sql = "Select * from Abeja " + where;
+
+        modelo.addColumn("Identifiación");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Raza");
+        modelo.addColumn("Peso");
+        modelo.addColumn("Altura");
+        modelo.addColumn("Anchura");
+        modelo.addColumn("Color");
 
         try {
 
-            Connection con = getConexion();
+            ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
 
-            CallableStatement Sentencia = (CallableStatement) con.prepareCall("{call eliminarAbeja(?)}");
-            Sentencia.setInt(1, ID);
-            Sentencia.execute();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int cantidadColumnas = rsmd.getColumnCount();
 
-            return true;
+            while (rs.next()) {
+
+                Object[] filas = new Object[cantidadColumnas];
+
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+
+                modelo.addRow(filas);
+            }
 
         } catch (SQLException e) {
-            System.err.println(e + " consulta");
-            return false;
-        }
 
+            System.err.println("Error: " + e);
+
+        } finally {
+            try {
+
+                con.close();
+
+            } catch (SQLException e) {
+
+                System.err.println("Error: " + e);
+
+            }
+        }
     }
 
+    //Método limpiar tabla
+    public void limpiarTabla() {
+        int a = modelo.getRowCount() - 1;
+        for (int i = a; i >= 0; i--) {
+            modelo.removeRow(i);
+        }
+
+        modelo.setColumnCount(0);
+    }
 }
