@@ -5,6 +5,7 @@
  */
 package com.campocolombia.modelo;
 
+import com.campocolombia.modelo.user.Usuario;
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -19,8 +20,8 @@ public class Conexion {
 
     //Variables
     private final String nombreBaseDatos = "CampoColombia";
-    private String usuarioLogin;
-    private String passwordLogin;
+    private static String usuarioLogin;
+    private static String passwordLogin;
     private final String URL = "jdbc:mysql://localhost:3306/" + nombreBaseDatos + "?noAccessToProcedureBodies=true";
     private Connection Connec = null;
 
@@ -28,6 +29,8 @@ public class Conexion {
     public Connection getConexion() {
 
         try {
+            
+           
 
             Class.forName("com.mysql.jdbc.Driver");
             Connec = (Connection) DriverManager.getConnection(this.URL, this.usuarioLogin, this.passwordLogin);

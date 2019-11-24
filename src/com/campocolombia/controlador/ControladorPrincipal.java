@@ -5,14 +5,16 @@
  */
 package com.campocolombia.controlador;
 
+import com.campocolombia.modelo.empleado.ConsultaEmpleado;
+import com.campocolombia.modelo.empleado.Empleado;
 import com.campocolombia.modelo.gestionabejas.Abeja;
 import com.campocolombia.modelo.gestionabejas.ConsultaAbeja;
 import com.campocolombia.vista.GestionAbeja;
+import com.campocolombia.vista.GestionEmpleados;
 import com.campocolombia.vista.Login;
 import com.campocolombia.vista.Principal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 
 /**
  *
@@ -21,7 +23,7 @@ import java.awt.event.ActionListener;
 public class ControladorPrincipal implements ActionListener {
 
     //Variables
-    Login formularioLogin; 
+    Login formularioLogin;
     Principal formularioMenu;
 
     //Método constructor
@@ -59,6 +61,19 @@ public class ControladorPrincipal implements ActionListener {
                 formularioMenu.setVisible(false);
 
             }
+        }
+
+        if (e.getSource() == formularioMenu.btmGestionUser) {
+
+            GestionEmpleados formularioEmpleado = new GestionEmpleados();
+            ConsultaEmpleado modeloEmpleado = new ConsultaEmpleado(formularioEmpleado);
+            Empleado empleado = new Empleado();
+
+            ControladorGestionEmpleados controladorEmpleado = new ControladorGestionEmpleados(formularioMenu, formularioEmpleado, modeloEmpleado, empleado);
+            formularioEmpleado.setControlador(controladorEmpleado);
+
+            formularioEmpleado.setVisible(true);
+            formularioMenu.setVisible(false);
         }
     }
 }

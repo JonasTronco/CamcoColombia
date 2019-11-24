@@ -19,6 +19,7 @@ public class ConsultaUsuario extends Conexion {
     
     //Variables
     Login formularioLogin;
+    
 
     //Método constructor
     public ConsultaUsuario(Login formularioLogin) {

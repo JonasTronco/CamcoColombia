@@ -5,17 +5,20 @@
  */
 package com.campocolombia.vista;
 
+import com.campocolombia.controlador.ControladorGestionClima;
+
 /**
  *
  * @author Jonattan
  */
 public class GestionClima extends javax.swing.JFrame {
 
-    /**
-     * Creates new form gestionClima
-     */
+    public ControladorGestionClima controlador = null;
+    
     public GestionClima() {
         initComponents();
+        setLocationRelativeTo(null);
+        setVisible(false);
     }
 
     /**
@@ -86,31 +89,31 @@ public class GestionClima extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
-        selectBorradoAbeja1 = new javax.swing.JComboBox<>();
-        textIDAbeja1 = new javax.swing.JTextField();
+        selectBorradoClima = new javax.swing.JComboBox<>();
+        textIDClima = new javax.swing.JTextField();
         jSeparator11 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
-        btmModificarAbeja1 = new javax.swing.JButton();
-        btmConsultaAbejas1 = new javax.swing.JButton();
-        btmBorradoAbeja1 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        btmModificarClima = new javax.swing.JButton();
+        btmConsultaClima = new javax.swing.JButton();
+        btmBorradoClima = new javax.swing.JButton();
+        fechaConsultaClima = new com.toedter.calendar.JDateChooser();
         jLabel21 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
-        textNombreAbejas1 = new javax.swing.JTextField();
+        textTemperatura = new javax.swing.JTextField();
         jSeparator12 = new javax.swing.JSeparator();
         jLabel19 = new javax.swing.JLabel();
-        textRazaAbeja1 = new javax.swing.JTextField();
+        textHumedad = new javax.swing.JTextField();
         jSeparator13 = new javax.swing.JSeparator();
-        textPesoAbeja1 = new javax.swing.JTextField();
+        textPrecipitacion = new javax.swing.JTextField();
         jSeparator14 = new javax.swing.JSeparator();
         jLabel20 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        btmIngresarAbeja1 = new javax.swing.JButton();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        btmIngresarClima = new javax.swing.JButton();
+        fechaClima = new com.toedter.calendar.JDateChooser();
         jPanel11 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblConsulta = new javax.swing.JTable();
 
         btmClima.setBackground(new java.awt.Color(255, 255, 255));
         btmClima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Clima.png"))); // NOI18N
@@ -503,34 +506,34 @@ public class GestionClima extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
-        selectBorradoAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        selectBorradoAbeja1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por ID" }));
+        selectBorradoClima.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        selectBorradoClima.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por ID" }));
 
-        textIDAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        textIDAbeja1.setBorder(null);
+        textIDClima.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        textIDClima.setBorder(null);
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel17.setText("ID");
 
-        btmModificarAbeja1.setBackground(new java.awt.Color(255, 255, 255));
-        btmModificarAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        btmModificarAbeja1.setText("Modificar");
-        btmModificarAbeja1.addActionListener(new java.awt.event.ActionListener() {
+        btmModificarClima.setBackground(new java.awt.Color(255, 255, 255));
+        btmModificarClima.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btmModificarClima.setText("Modificar");
+        btmModificarClima.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btmModificarAbeja1ActionPerformed(evt);
+                btmModificarClimaActionPerformed(evt);
             }
         });
 
-        btmConsultaAbejas1.setBackground(new java.awt.Color(255, 255, 255));
-        btmConsultaAbejas1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        btmConsultaAbejas1.setText("Consulta");
+        btmConsultaClima.setBackground(new java.awt.Color(255, 255, 255));
+        btmConsultaClima.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btmConsultaClima.setText("Consulta");
 
-        btmBorradoAbeja1.setBackground(new java.awt.Color(255, 255, 255));
-        btmBorradoAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        btmBorradoAbeja1.setText("Borrado");
+        btmBorradoClima.setBackground(new java.awt.Color(255, 255, 255));
+        btmBorradoClima.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btmBorradoClima.setText("Borrado");
 
-        jDateChooser1.setBackground(new java.awt.Color(255, 255, 255));
-        jDateChooser1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        fechaConsultaClima.setBackground(new java.awt.Color(255, 255, 255));
+        fechaConsultaClima.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel21.setText("Por Fecha");
@@ -543,7 +546,7 @@ public class GestionClima extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(selectBorradoAbeja1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(selectBorradoClima, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(54, 54, 54))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addContainerGap(52, Short.MAX_VALUE)
@@ -553,17 +556,17 @@ public class GestionClima extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(fechaConsultaClima, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE))
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textIDAbeja1)
+                                    .addComponent(textIDClima)
                                     .addComponent(jSeparator11))
                                 .addGap(54, 54, 54)))))
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btmModificarAbeja1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btmConsultaAbejas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btmBorradoAbeja1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btmModificarClima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btmConsultaClima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btmBorradoClima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(38, 38, 38))
         );
         jPanel9Layout.setVerticalGroup(
@@ -574,21 +577,21 @@ public class GestionClima extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17)
-                            .addComponent(textIDAbeja1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textIDClima, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addComponent(btmModificarAbeja1)))
+                        .addComponent(btmModificarClima)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btmConsultaAbejas1)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btmConsultaClima)
+                    .addComponent(fechaConsultaClima, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(selectBorradoAbeja1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btmBorradoAbeja1))
+                    .addComponent(selectBorradoClima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btmBorradoClima))
                 .addGap(126, 126, 126))
         );
 
@@ -599,28 +602,28 @@ public class GestionClima extends javax.swing.JFrame {
         jLabel18.setText("Temperatura del Dia");
         jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        textNombreAbejas1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        textNombreAbejas1.setBorder(null);
-        textNombreAbejas1.addActionListener(new java.awt.event.ActionListener() {
+        textTemperatura.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        textTemperatura.setBorder(null);
+        textTemperatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textNombreAbejas1ActionPerformed(evt);
+                textTemperaturaActionPerformed(evt);
             }
         });
-        jPanel10.add(textNombreAbejas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 228, 30));
+        jPanel10.add(textTemperatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 228, 30));
         jPanel10.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 228, 10));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel19.setText("Humedad del Dia");
         jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
-        textRazaAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        textRazaAbeja1.setBorder(null);
-        jPanel10.add(textRazaAbeja1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 228, 30));
+        textHumedad.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        textHumedad.setBorder(null);
+        jPanel10.add(textHumedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 228, 30));
         jPanel10.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 228, 12));
 
-        textPesoAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        textPesoAbeja1.setBorder(null);
-        jPanel10.add(textPesoAbeja1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 230, 30));
+        textPrecipitacion.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        textPrecipitacion.setBorder(null);
+        jPanel10.add(textPrecipitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 230, 30));
         jPanel10.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 228, 16));
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
@@ -631,14 +634,14 @@ public class GestionClima extends javax.swing.JFrame {
         jLabel23.setText("Fecha");
         jPanel10.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
-        btmIngresarAbeja1.setBackground(new java.awt.Color(255, 255, 255));
-        btmIngresarAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        btmIngresarAbeja1.setText("Ingresar");
-        jPanel10.add(btmIngresarAbeja1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, -1, -1));
+        btmIngresarClima.setBackground(new java.awt.Color(255, 255, 255));
+        btmIngresarClima.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btmIngresarClima.setText("Ingresar");
+        jPanel10.add(btmIngresarClima, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, -1, -1));
 
-        jDateChooser2.setBackground(new java.awt.Color(255, 255, 255));
-        jDateChooser2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jPanel10.add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 230, 30));
+        fechaClima.setBackground(new java.awt.Color(255, 255, 255));
+        fechaClima.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jPanel10.add(fechaClima, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 230, 30));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -665,34 +668,34 @@ public class GestionClima extends javax.swing.JFrame {
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane4.setViewportView(tblConsulta);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(51, 51, 51)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, 560, 680));
@@ -712,13 +715,13 @@ public class GestionClima extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btmModificarColmenaActionPerformed
 
-    private void btmModificarAbeja1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmModificarAbeja1ActionPerformed
+    private void btmModificarClimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmModificarClimaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btmModificarAbeja1ActionPerformed
+    }//GEN-LAST:event_btmModificarClimaActionPerformed
 
-    private void textNombreAbejas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreAbejas1ActionPerformed
+    private void textTemperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textTemperaturaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textNombreAbejas1ActionPerformed
+    }//GEN-LAST:event_textTemperaturaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -758,20 +761,20 @@ public class GestionClima extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btmBorradoAbeja;
-    public javax.swing.JButton btmBorradoAbeja1;
+    public javax.swing.JButton btmBorradoClima;
     public javax.swing.JButton btmBorradoColmena;
     public javax.swing.JButton btmClima;
     public javax.swing.JButton btmConsultaAbejas;
-    public javax.swing.JButton btmConsultaAbejas1;
+    public javax.swing.JButton btmConsultaClima;
     public javax.swing.JButton btmConsultaColmena;
     public javax.swing.JButton btmIngresarAbeja;
-    public javax.swing.JButton btmIngresarAbeja1;
+    public javax.swing.JButton btmIngresarClima;
     public javax.swing.JButton btmIngresarColmena;
     public javax.swing.JButton btmModificarAbeja;
-    public javax.swing.JButton btmModificarAbeja1;
+    public javax.swing.JButton btmModificarClima;
     public javax.swing.JButton btmModificarColmena;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private com.toedter.calendar.JDateChooser fechaClima;
+    private com.toedter.calendar.JDateChooser fechaConsultaClima;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -804,8 +807,8 @@ public class GestionClima extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -820,26 +823,26 @@ public class GestionClima extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField8;
     public javax.swing.JComboBox<String> selectBorradoAbeja;
-    public javax.swing.JComboBox<String> selectBorradoAbeja1;
+    public javax.swing.JComboBox<String> selectBorradoClima;
     public javax.swing.JComboBox<String> selectBorradoComena;
     public javax.swing.JComboBox<String> selectConsultaAbejas;
     public javax.swing.JComboBox<String> selectConsultaColmena;
     public javax.swing.JComboBox<String> selectTipoAbeja;
+    public javax.swing.JTable tblConsulta;
     public javax.swing.JTextField textAltoAbeja;
     public javax.swing.JTextField textAnchoAbeja;
     public javax.swing.JTextField textColorAbeja;
+    public javax.swing.JTextField textHumedad;
     public javax.swing.JTextField textIDAbeja;
-    public javax.swing.JTextField textIDAbeja1;
+    public javax.swing.JTextField textIDClima;
     public javax.swing.JTextField textIDColmena;
     public javax.swing.JTextField textNombreAbejas;
-    public javax.swing.JTextField textNombreAbejas1;
     public javax.swing.JTextField textPesoAbeja;
-    public javax.swing.JTextField textPesoAbeja1;
+    public javax.swing.JTextField textPrecipitacion;
     public javax.swing.JTextField textRazaAbeja;
-    public javax.swing.JTextField textRazaAbeja1;
+    public javax.swing.JTextField textTemperatura;
     // End of variables declaration//GEN-END:variables
 }

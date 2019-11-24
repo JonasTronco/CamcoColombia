@@ -36,6 +36,15 @@ public class ControladorGestionAbeja implements ActionListener {
     //ActionListener
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        //Botòn salir
+        if (e.getSource() == formularioGestionAbeja.btnAtras) {
+
+            //Se realiza el cambio de forms
+            formularioMenu.setVisible(true);
+            formularioGestionAbeja.setVisible(false);
+
+        }
 
         //Botón insertar abeja
         if (e.getSource() == formularioGestionAbeja.btmIngresarAbeja) {

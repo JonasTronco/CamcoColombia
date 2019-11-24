@@ -448,6 +448,7 @@ public class Principal extends javax.swing.JFrame {
         this.controlador = controlador;
         this.btnSalir.addActionListener(controlador);
         this.btmGestionAbejas.addActionListener(controlador);
+        this.btmGestionUser.addActionListener(controlador);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
