@@ -114,6 +114,7 @@ public class GestionClima extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblConsulta = new javax.swing.JTable();
+        btnAtras = new javax.swing.JButton();
 
         btmClima.setBackground(new java.awt.Color(255, 255, 255));
         btmClima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Clima.png"))); // NOI18N
@@ -681,21 +682,28 @@ public class GestionClima extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tblConsulta);
 
+        btnAtras.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        btnAtras.setText("Atras");
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap(33, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, 560, 680));
@@ -758,6 +766,19 @@ public class GestionClima extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void setControlador(ControladorGestionClima controlador) {
+        
+        //Bototones Abeja
+        this.controlador = controlador;
+        this.addWindowListener(controlador);
+        this.btmConsultaClima.addActionListener(controlador);
+        this.btmIngresarClima.addActionListener(controlador);
+        this.btmModificarClima.addActionListener(controlador);
+        this.btmBorradoClima.addActionListener(controlador);
+        this.btnAtras.addActionListener(controlador);
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btmBorradoAbeja;
@@ -773,8 +794,9 @@ public class GestionClima extends javax.swing.JFrame {
     public javax.swing.JButton btmModificarAbeja;
     public javax.swing.JButton btmModificarClima;
     public javax.swing.JButton btmModificarColmena;
-    private com.toedter.calendar.JDateChooser fechaClima;
-    private com.toedter.calendar.JDateChooser fechaConsultaClima;
+    public javax.swing.JButton btnAtras;
+    public com.toedter.calendar.JDateChooser fechaClima;
+    public com.toedter.calendar.JDateChooser fechaConsultaClima;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

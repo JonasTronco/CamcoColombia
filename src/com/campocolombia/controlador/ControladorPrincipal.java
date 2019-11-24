@@ -5,11 +5,14 @@
  */
 package com.campocolombia.controlador;
 
+import com.campocolombia.modelo.Clima.Clima;
+import com.campocolombia.modelo.Clima.ConsultaClima;
 import com.campocolombia.modelo.empleado.ConsultaEmpleado;
 import com.campocolombia.modelo.empleado.Empleado;
 import com.campocolombia.modelo.gestionabejas.Abeja;
 import com.campocolombia.modelo.gestionabejas.ConsultaAbeja;
 import com.campocolombia.vista.GestionAbeja;
+import com.campocolombia.vista.GestionClima;
 import com.campocolombia.vista.GestionEmpleados;
 import com.campocolombia.vista.Login;
 import com.campocolombia.vista.Principal;
@@ -64,6 +67,32 @@ public class ControladorPrincipal implements ActionListener {
         }
 
         if (e.getSource() == formularioMenu.btmGestionUser) {
+
+            GestionEmpleados formularioEmpleado = new GestionEmpleados();
+            ConsultaEmpleado modeloEmpleado = new ConsultaEmpleado(formularioEmpleado);
+            Empleado empleado = new Empleado();
+
+            ControladorGestionEmpleados controladorEmpleado = new ControladorGestionEmpleados(formularioMenu, formularioEmpleado, modeloEmpleado, empleado);
+            formularioEmpleado.setControlador(controladorEmpleado);
+
+            formularioEmpleado.setVisible(true);
+            formularioMenu.setVisible(false);
+        }
+        
+        if (e.getSource() == formularioMenu.btmClima) {
+
+            GestionClima formularioClima = new GestionClima();
+            ConsultaClima modeloClima = new ConsultaClima(formularioClima);
+            Clima clima = new Clima();
+
+            ControladorGestionClima controladorClima = new ControladorGestionClima(formularioMenu, formularioClima, modeloClima, clima);
+            formularioClima.setControlador(controladorClima);
+
+            formularioClima.setVisible(true);
+            formularioMenu.setVisible(false);
+        }
+        
+        if (e.getSource() == formularioMenu.btmMantenimiento) {
 
             GestionEmpleados formularioEmpleado = new GestionEmpleados();
             ConsultaEmpleado modeloEmpleado = new ConsultaEmpleado(formularioEmpleado);
