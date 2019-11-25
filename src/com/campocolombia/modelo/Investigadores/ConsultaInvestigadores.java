@@ -1,7 +1,12 @@
-package com.campocolombia.modelo.Clima;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.campocolombia.modelo.Investigadores;
 
 import com.campocolombia.modelo.Conexion;
-import com.campocolombia.vista.GestionClima;
+import com.campocolombia.vista.GestionInvestigadores;
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,33 +14,32 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 
-public class ConsultaClima extends Conexion {
+public class ConsultaInvestigadores extends Conexion {
 
     //Variables
-    GestionClima formularioGestion;
+    GestionInvestigadores formularioGestion;
     DefaultTableModel modelo = new DefaultTableModel();
 
-    public ConsultaClima(GestionClima formularioGestion) {
+    public ConsultaInvestigadores(GestionInvestigadores formularioGestion) {
         this.formularioGestion = formularioGestion;
     }
 
     //Método ingresar abeja
-    public boolean ingresar(Clima clima) {
+    public boolean ingresar(Investigador inves) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
 
-        String sql = "insert into Climatologia(TemperaturaClima,HumedadClima,PrecipitacionClima,FechaClima,IdEmpleado) values(?,?,?,?,?)";
+        String sql = "insert into RegistroCalidad values(?,?,?,?,?)";
 
         try {
 
             ps = (PreparedStatement) con.prepareStatement(sql);
-            ps.setDouble(1, clima.getTemperaturaClima());
-            ps.setDouble(2, clima.getHumedadClima());
-            ps.setDouble(3, clima.getPrecipitacionClima());
-
-            ps.setDate(4, java.sql.Date.valueOf(clima.getFechaClima()));
-            ps.setInt(5, clima.getIdEmpleado());
+            ps.setInt(1, inves.getIdEmpleado());
+            ps.setInt(2, inves.getIdProducto());
+            ps.setDate(3, java.sql.Date.valueOf(inves.getFechaRegistroC()));
+            ps.setDouble(4, inves.getPuntacionRegistroC());
+            ps.setString(5, inves.getAprovacionRegistroC());
 
             ps.execute();
             return true;
@@ -61,7 +65,18 @@ public class ConsultaClima extends Conexion {
         }
     }
 
-    public void consulta(String consulta) {
+    public void consulta(String consulta, String campo) {
+
+        String where = "";
+
+        if (consulta.equals("General")) {
+
+            where = "";
+
+        } else if (consulta.equals("Por ID")) {
+            where = "where IdRegistroC = " + Integer.parseInt(campo);
+
+        }
 
         limpiarTabla();
         formularioGestion.tblConsulta.setModel(modelo);
@@ -69,20 +84,18 @@ public class ConsultaClima extends Conexion {
         PreparedStatement ps = null;
         Connection con = getConexion();
 
-        String sql = "Select * from Climatologia where FechaClima=?";
+        String sql = "Select * from RegistroCalidad "+where;
 
         modelo.addColumn("Id");
-        modelo.addColumn("Temperatura");
-        modelo.addColumn("Humedad");
-        modelo.addColumn("Precipitación");
+        modelo.addColumn("Id Empleado");
+        modelo.addColumn("Id Producto");
         modelo.addColumn("Fecha");
-        modelo.addColumn("Edad");
-        modelo.addColumn("IdEmpleado");
+        modelo.addColumn("Puntuación");
+        modelo.addColumn("Aprovación");
 
         try {
 
             ps = (PreparedStatement) con.prepareStatement(sql);
-            ps.setDate(1, java.sql.Date.valueOf(consulta));
             ResultSet rs = ps.executeQuery();
 
             ResultSetMetaData rsmd = rs.getMetaData();
@@ -116,23 +129,24 @@ public class ConsultaClima extends Conexion {
         }
     }
 
-    public boolean Actualizar(Clima clima) {
+    public boolean Actualizar(Investigador inves) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
 
-        String sql = "Update Climatologia set TemperaturaClima=?, HumedadClima=?, PrecipitacionClima=?, FechaClima=?" + " where IdClima=?";
+        String sql = "Update RegistroCalidad set IdProducto=?, FechaRegistroC=?, PuntacionRegistroC=?, AprovacionRegistroC=?" + " where IdEmpleado=?";
 
         try {
 
             ps = (PreparedStatement) con.prepareStatement(sql);
 
-            ps.setDouble(1, clima.getTemperaturaClima());
-            ps.setDouble(2, clima.getHumedadClima());
-            ps.setDouble(3, clima.getPrecipitacionClima());
-
-            ps.setDate(4, java.sql.Date.valueOf(clima.getFechaClima()));
-            ps.setInt(5, clima.getIdClima());
+            
+            ps.setInt(1, inves.getIdProducto());
+            ps.setDate(2, java.sql.Date.valueOf(inves.getFechaRegistroC()));
+            ps.setDouble(3, inves.getPuntacionRegistroC());
+            ps.setString(4, inves.getAprovacionRegistroC());
+            
+            ps.setInt(5, inves.getIdEmpleado());
 
             ps.execute();
             return true;
@@ -155,17 +169,17 @@ public class ConsultaClima extends Conexion {
         }
     }
 
-    public boolean Borrado(Clima clima) {
+    public boolean Borrado(Investigador inves) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
 
-        String sql = "delete from Climatologia where IdClima = ?";
+        String sql = "delete from RegistroCalidad where IdRegistroC = ?";
 
         try {
 
             ps = (PreparedStatement) con.prepareStatement(sql);
-            ps.setInt(1, clima.getIdClima());
+            ps.setInt(1, inves.getIdRegistroC());
             ps.execute();
             return true;
 
@@ -186,8 +200,8 @@ public class ConsultaClima extends Conexion {
             }
         }
     }
-
-    //Método cargar id abejas
+    
+      //Método cargar id abejas
     public int cargarIdEmpleado(String UserLogin) {
 
         PreparedStatement ps = null;

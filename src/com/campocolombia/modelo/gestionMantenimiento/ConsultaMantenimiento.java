@@ -1,7 +1,8 @@
-package com.campocolombia.modelo.Clima;
+package com.campocolombia.modelo.gestionMantenimiento;
 
 import com.campocolombia.modelo.Conexion;
-import com.campocolombia.vista.GestionClima;
+import com.campocolombia.vista.GestionMantenimiento;
+import com.mysql.jdbc.CallableStatement;
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,35 +10,33 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 
-public class ConsultaClima extends Conexion {
+public class ConsultaMantenimiento extends Conexion {
 
     //Variables
-    GestionClima formularioGestion;
+    GestionMantenimiento formularioGestion;
     DefaultTableModel modelo = new DefaultTableModel();
 
-    public ConsultaClima(GestionClima formularioGestion) {
+    public ConsultaMantenimiento(GestionMantenimiento formularioGestion) {
         this.formularioGestion = formularioGestion;
     }
 
     //Método ingresar abeja
-    public boolean ingresar(Clima clima) {
+    public boolean ingresar(Mantenimiento mante, String IdEmpleado) {
 
-        PreparedStatement ps = null;
+
         Connection con = getConexion();
 
-        String sql = "insert into Climatologia(TemperaturaClima,HumedadClima,PrecipitacionClima,FechaClima,IdEmpleado) values(?,?,?,?,?)";
-
+        //String sql = "insert into Mantenimiento(TipoMantenimiento,DescripcionMantenimiento) values(?,?)";
         try {
 
-            ps = (PreparedStatement) con.prepareStatement(sql);
-            ps.setDouble(1, clima.getTemperaturaClima());
-            ps.setDouble(2, clima.getHumedadClima());
-            ps.setDouble(3, clima.getPrecipitacionClima());
+            CallableStatement Sentencia = (CallableStatement) con.prepareCall("{call ingresarMantenimiento(?,?,?,?,?)}");
 
-            ps.setDate(4, java.sql.Date.valueOf(clima.getFechaClima()));
-            ps.setInt(5, clima.getIdEmpleado());
-
-            ps.execute();
+            Sentencia.setInt(1, Integer.parseInt(IdEmpleado));
+            Sentencia.setInt(2, mante.getIdcolmena());
+            Sentencia.setString(3, mante.getTipoMantenimiento());
+            Sentencia.setString(4, mante.getDescripcionMantenimiento());
+            Sentencia.setDate(5, java.sql.Date.valueOf(mante.getFecha()));
+            Sentencia.execute();
             return true;
 
         } catch (SQLException e) {
@@ -69,15 +68,14 @@ public class ConsultaClima extends Conexion {
         PreparedStatement ps = null;
         Connection con = getConexion();
 
-        String sql = "Select * from Climatologia where FechaClima=?";
+        String sql = "Select IdMantenimiento, IdColmena, TipoMantenimiento, DescripcionMantenimiento from Mantenimiento as Man"
+                + " join AsignacionMantenimientoColmena as AsigMCol on Man.IdMantenimiento = AsigMCol.IdMantenimiento"
+                + " where FechaMantenimientoC =?";
 
         modelo.addColumn("Id");
-        modelo.addColumn("Temperatura");
-        modelo.addColumn("Humedad");
-        modelo.addColumn("Precipitación");
-        modelo.addColumn("Fecha");
-        modelo.addColumn("Edad");
-        modelo.addColumn("IdEmpleado");
+        modelo.addColumn("Colmena");
+        modelo.addColumn("TipoMantenimiento");
+        modelo.addColumn("DescripcionMantenimiento");
 
         try {
 
@@ -116,25 +114,23 @@ public class ConsultaClima extends Conexion {
         }
     }
 
-    public boolean Actualizar(Clima clima) {
+    public boolean Actualizar(Mantenimiento mante) {
 
-        PreparedStatement ps = null;
+     
         Connection con = getConexion();
 
-        String sql = "Update Climatologia set TemperaturaClima=?, HumedadClima=?, PrecipitacionClima=?, FechaClima=?" + " where IdClima=?";
+       
 
         try {
 
-            ps = (PreparedStatement) con.prepareStatement(sql);
+           CallableStatement Sentencia = (CallableStatement) con.prepareCall("{call ActualizarMantenimiento(?,?,?,?,?)}");
 
-            ps.setDouble(1, clima.getTemperaturaClima());
-            ps.setDouble(2, clima.getHumedadClima());
-            ps.setDouble(3, clima.getPrecipitacionClima());
-
-            ps.setDate(4, java.sql.Date.valueOf(clima.getFechaClima()));
-            ps.setInt(5, clima.getIdClima());
-
-            ps.execute();
+            Sentencia.setInt(1, mante.getIdMantenimiento());
+            Sentencia.setInt(2, mante.getIdcolmena());
+            Sentencia.setString(3, mante.getTipoMantenimiento());
+            Sentencia.setString(4, mante.getDescripcionMantenimiento());
+            Sentencia.setDate(5, java.sql.Date.valueOf(mante.getFecha()));
+            Sentencia.execute();
             return true;
 
         } catch (SQLException e) {
@@ -155,18 +151,19 @@ public class ConsultaClima extends Conexion {
         }
     }
 
-    public boolean Borrado(Clima clima) {
+    public boolean Borrado(Mantenimiento mante) {
 
-        PreparedStatement ps = null;
+       
         Connection con = getConexion();
 
-        String sql = "delete from Climatologia where IdClima = ?";
+       
 
         try {
 
-            ps = (PreparedStatement) con.prepareStatement(sql);
-            ps.setInt(1, clima.getIdClima());
-            ps.execute();
+            CallableStatement Sentencia = (CallableStatement) con.prepareCall("{call borradoMantenimiento(?)}");
+
+            Sentencia.setInt(1, mante.getIdMantenimiento());
+            Sentencia.execute();
             return true;
 
         } catch (SQLException e) {

@@ -7,13 +7,19 @@ package com.campocolombia.controlador;
 
 import com.campocolombia.modelo.Clima.Clima;
 import com.campocolombia.modelo.Clima.ConsultaClima;
+import com.campocolombia.modelo.Investigadores.ConsultaInvestigadores;
+import com.campocolombia.modelo.Investigadores.Investigador;
 import com.campocolombia.modelo.empleado.ConsultaEmpleado;
 import com.campocolombia.modelo.empleado.Empleado;
+import com.campocolombia.modelo.gestionMantenimiento.ConsultaMantenimiento;
+import com.campocolombia.modelo.gestionMantenimiento.Mantenimiento;
 import com.campocolombia.modelo.gestionabejas.Abeja;
 import com.campocolombia.modelo.gestionabejas.ConsultaAbeja;
 import com.campocolombia.vista.GestionAbeja;
 import com.campocolombia.vista.GestionClima;
 import com.campocolombia.vista.GestionEmpleados;
+import com.campocolombia.vista.GestionInvestigadores;
+import com.campocolombia.vista.GestionMantenimiento;
 import com.campocolombia.vista.Login;
 import com.campocolombia.vista.Principal;
 import java.awt.event.ActionEvent;
@@ -92,16 +98,29 @@ public class ControladorPrincipal implements ActionListener {
             formularioMenu.setVisible(false);
         }
         
+        if (e.getSource() == formularioMenu.btmInvestigacion) {
+
+            GestionInvestigadores formulario = new GestionInvestigadores();
+            ConsultaInvestigadores modeloInves = new ConsultaInvestigadores(formulario);
+            Investigador inves = new Investigador();
+
+            ControladorGestionInvestigacion controladorInves = new ControladorGestionInvestigacion(formularioMenu, formulario, modeloInves, inves);
+            formulario.setControlador(controladorInves);
+
+            formulario.setVisible(true);
+            formularioMenu.setVisible(false);
+        }
+        
         if (e.getSource() == formularioMenu.btmMantenimiento) {
 
-            GestionEmpleados formularioEmpleado = new GestionEmpleados();
-            ConsultaEmpleado modeloEmpleado = new ConsultaEmpleado(formularioEmpleado);
-            Empleado empleado = new Empleado();
+            GestionMantenimiento formulario = new GestionMantenimiento();
+            ConsultaMantenimiento modelo = new ConsultaMantenimiento(formulario);
+            Mantenimiento mante = new Mantenimiento();
 
-            ControladorGestionEmpleados controladorEmpleado = new ControladorGestionEmpleados(formularioMenu, formularioEmpleado, modeloEmpleado, empleado);
-            formularioEmpleado.setControlador(controladorEmpleado);
+            ControladorGestionMantenimiento controlador = new ControladorGestionMantenimiento(formularioMenu, formulario, modelo, mante);
+            formulario.setControlador(controlador);
 
-            formularioEmpleado.setVisible(true);
+            formulario.setVisible(true);
             formularioMenu.setVisible(false);
         }
     }

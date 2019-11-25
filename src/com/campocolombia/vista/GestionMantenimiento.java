@@ -1,21 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.campocolombia.vista;
 
-/**
- *
- * @author Jonattan
- */
+import com.campocolombia.controlador.ControladorGestionMantenimiento;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowListener;
+
+
 public class GestionMantenimiento extends javax.swing.JFrame {
 
-    /**
-     * Creates new form gestionMantenimiento
-     */
+   public ControladorGestionMantenimiento controlador = null;
     public GestionMantenimiento() {
         initComponents();
+        setLocationRelativeTo(null);
+        setVisible(false);
     }
 
     /**
@@ -34,30 +31,31 @@ public class GestionMantenimiento extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
-        textNombreAbejas1 = new javax.swing.JTextField();
+        textIDColmena = new javax.swing.JTextField();
         jSeparator12 = new javax.swing.JSeparator();
         jLabel19 = new javax.swing.JLabel();
-        textRazaAbeja1 = new javax.swing.JTextField();
+        textTipoMantenimiento = new javax.swing.JTextField();
         jSeparator13 = new javax.swing.JSeparator();
         jLabel20 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        btmIngresarAbeja1 = new javax.swing.JButton();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        btmIngresar = new javax.swing.JButton();
+        fechaMantenimiento = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textAnotaciones = new javax.swing.JTextArea();
         jPanel9 = new javax.swing.JPanel();
-        selectBorradoAbeja1 = new javax.swing.JComboBox<>();
-        textIDAbeja1 = new javax.swing.JTextField();
+        selectBorrado = new javax.swing.JComboBox<>();
+        textIDMantenimiento = new javax.swing.JTextField();
         jSeparator11 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
-        btmModificarAbeja1 = new javax.swing.JButton();
-        btmConsultaAbejas1 = new javax.swing.JButton();
-        btmBorradoAbeja1 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        btmModificar = new javax.swing.JButton();
+        btmConsulta = new javax.swing.JButton();
+        btmBorrado = new javax.swing.JButton();
+        fechaMantenimientoConsulta = new com.toedter.calendar.JDateChooser();
         jLabel21 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblConsulta = new javax.swing.JTable();
+        btnAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -106,23 +104,23 @@ public class GestionMantenimiento extends javax.swing.JFrame {
         jLabel18.setText("ID Colmena");
         jPanel10.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        textNombreAbejas1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        textNombreAbejas1.setBorder(null);
-        textNombreAbejas1.addActionListener(new java.awt.event.ActionListener() {
+        textIDColmena.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        textIDColmena.setBorder(null);
+        textIDColmena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textNombreAbejas1ActionPerformed(evt);
+                textIDColmenaActionPerformed(evt);
             }
         });
-        jPanel10.add(textNombreAbejas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 228, 30));
+        jPanel10.add(textIDColmena, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 228, 30));
         jPanel10.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 228, 10));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel19.setText("Tipo Mantenimiento");
         jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
-        textRazaAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        textRazaAbeja1.setBorder(null);
-        jPanel10.add(textRazaAbeja1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 228, 30));
+        textTipoMantenimiento.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        textTipoMantenimiento.setBorder(null);
+        jPanel10.add(textTipoMantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 228, 30));
         jPanel10.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 228, 12));
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
@@ -133,52 +131,52 @@ public class GestionMantenimiento extends javax.swing.JFrame {
         jLabel23.setText("Fecha");
         jPanel10.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
-        btmIngresarAbeja1.setBackground(new java.awt.Color(255, 255, 255));
-        btmIngresarAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        btmIngresarAbeja1.setText("Ingresar");
-        jPanel10.add(btmIngresarAbeja1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        btmIngresar.setBackground(new java.awt.Color(255, 255, 255));
+        btmIngresar.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btmIngresar.setText("Ingresar");
+        jPanel10.add(btmIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
 
-        jDateChooser2.setBackground(new java.awt.Color(255, 255, 255));
-        jDateChooser2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jPanel10.add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 230, 30));
+        fechaMantenimiento.setBackground(new java.awt.Color(255, 255, 255));
+        fechaMantenimiento.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jPanel10.add(fechaMantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 230, 30));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        textAnotaciones.setColumns(20);
+        textAnotaciones.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        textAnotaciones.setRows(5);
+        jScrollPane1.setViewportView(textAnotaciones);
 
         jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 190, 230, -1));
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
-        selectBorradoAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        selectBorradoAbeja1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por ID" }));
+        selectBorrado.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        selectBorrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por ID" }));
 
-        textIDAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        textIDAbeja1.setBorder(null);
+        textIDMantenimiento.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        textIDMantenimiento.setBorder(null);
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel17.setText("ID");
 
-        btmModificarAbeja1.setBackground(new java.awt.Color(255, 255, 255));
-        btmModificarAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        btmModificarAbeja1.setText("Modificar");
-        btmModificarAbeja1.addActionListener(new java.awt.event.ActionListener() {
+        btmModificar.setBackground(new java.awt.Color(255, 255, 255));
+        btmModificar.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btmModificar.setText("Modificar");
+        btmModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btmModificarAbeja1ActionPerformed(evt);
+                btmModificarActionPerformed(evt);
             }
         });
 
-        btmConsultaAbejas1.setBackground(new java.awt.Color(255, 255, 255));
-        btmConsultaAbejas1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        btmConsultaAbejas1.setText("Consulta");
+        btmConsulta.setBackground(new java.awt.Color(255, 255, 255));
+        btmConsulta.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btmConsulta.setText("Consulta");
 
-        btmBorradoAbeja1.setBackground(new java.awt.Color(255, 255, 255));
-        btmBorradoAbeja1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        btmBorradoAbeja1.setText("Borrado");
+        btmBorrado.setBackground(new java.awt.Color(255, 255, 255));
+        btmBorrado.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        btmBorrado.setText("Borrado");
 
-        jDateChooser1.setBackground(new java.awt.Color(255, 255, 255));
-        jDateChooser1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        fechaMantenimientoConsulta.setBackground(new java.awt.Color(255, 255, 255));
+        fechaMantenimientoConsulta.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel21.setText("Por Fecha");
@@ -191,7 +189,7 @@ public class GestionMantenimiento extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(selectBorradoAbeja1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(selectBorrado, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(54, 54, 54))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -201,17 +199,17 @@ public class GestionMantenimiento extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(fechaMantenimientoConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE))
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textIDAbeja1)
+                                    .addComponent(textIDMantenimiento)
                                     .addComponent(jSeparator11))
                                 .addGap(54, 54, 54)))))
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btmModificarAbeja1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btmConsultaAbejas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btmBorradoAbeja1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btmModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btmConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btmBorrado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(38, 38, 38))
         );
         jPanel9Layout.setVerticalGroup(
@@ -222,21 +220,21 @@ public class GestionMantenimiento extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17)
-                            .addComponent(textIDAbeja1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textIDMantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addComponent(btmModificarAbeja1)))
+                        .addComponent(btmModificar)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btmConsultaAbejas1)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btmConsulta)
+                    .addComponent(fechaMantenimientoConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(selectBorradoAbeja1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btmBorradoAbeja1))
+                    .addComponent(selectBorrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btmBorrado))
                 .addGap(126, 126, 126))
         );
 
@@ -262,38 +260,45 @@ public class GestionMantenimiento extends javax.swing.JFrame {
                 .addGap(124, 124, 124))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 550, 670));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 550, 650));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane4.setViewportView(tblConsulta);
+
+        btnAtras.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        btnAtras.setText("Atras");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addContainerGap(70, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 600, 670));
@@ -301,13 +306,13 @@ public class GestionMantenimiento extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textNombreAbejas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreAbejas1ActionPerformed
+    private void textIDColmenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textIDColmenaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textNombreAbejas1ActionPerformed
+    }//GEN-LAST:event_textIDColmenaActionPerformed
 
-    private void btmModificarAbeja1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmModificarAbeja1ActionPerformed
+    private void btmModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmModificarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btmModificarAbeja1ActionPerformed
+    }//GEN-LAST:event_btmModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -344,14 +349,25 @@ public class GestionMantenimiento extends javax.swing.JFrame {
             }
         });
     }
-
+public void setControlador(ControladorGestionMantenimiento controlador) {
+        
+        //Bototones Abeja
+        this.controlador = controlador;     
+        this.addWindowListener((WindowListener) controlador);
+        this.btmConsulta.addActionListener((ActionListener) controlador);
+        this.btmIngresar.addActionListener((ActionListener) controlador);
+        this.btmModificar.addActionListener((ActionListener) controlador);
+        this.btmBorrado.addActionListener((ActionListener) controlador);
+        this.btnAtras.addActionListener((ActionListener) controlador);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btmBorradoAbeja1;
-    public javax.swing.JButton btmConsultaAbejas1;
-    public javax.swing.JButton btmIngresarAbeja1;
-    public javax.swing.JButton btmModificarAbeja1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    public javax.swing.JButton btmBorrado;
+    public javax.swing.JButton btmConsulta;
+    public javax.swing.JButton btmIngresar;
+    public javax.swing.JButton btmModificar;
+    public javax.swing.JButton btnAtras;
+    public com.toedter.calendar.JDateChooser fechaMantenimiento;
+    public com.toedter.calendar.JDateChooser fechaMantenimientoConsulta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -366,16 +382,16 @@ public class GestionMantenimiento extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    public javax.swing.JComboBox<String> selectBorradoAbeja1;
-    public javax.swing.JTextField textIDAbeja1;
-    public javax.swing.JTextField textNombreAbejas1;
-    public javax.swing.JTextField textRazaAbeja1;
+    public javax.swing.JComboBox<String> selectBorrado;
+    public javax.swing.JTable tblConsulta;
+    public javax.swing.JTextArea textAnotaciones;
+    public javax.swing.JTextField textIDColmena;
+    public javax.swing.JTextField textIDMantenimiento;
+    public javax.swing.JTextField textTipoMantenimiento;
     // End of variables declaration//GEN-END:variables
 }
